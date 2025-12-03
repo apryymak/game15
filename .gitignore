@@ -32,3 +32,7 @@ yarn-error.log*
 Thumbs.db
 
 
+
+# Generated files
+comparison.html
+src/components/Tile15.tsx

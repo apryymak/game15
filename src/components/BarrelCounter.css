@@ -1,0 +1,71 @@
+.barrel-counter-frame {
+    display: flex;
+    gap: 1px;
+    background: none;
+    padding: 2px;
+    border: 1px solid #5d4037;
+    border-radius: 4px;
+    box-shadow: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.barrel-container {
+    width: 20px;
+    height: 20px;
+    /* Match face height */
+    perspective: 400px;
+    /* Closer perspective for more 3D effect */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Add a gradient overlay to simulate the curved glass/shadow */
+
+
+.barrel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Bouncy transition */
+}
+
+.barrel-face {
+    position: absolute;
+    width: 20px;
+    line-height: 20px;
+    /* height set inline */
+    left: 0;
+    top: 0;
+    /* Center the number */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    color: #713e13;
+    /* Dark wood text */
+    background: #d4a574;
+    /* Light wood background */
+    background-image: url('../assets/images/wood-tile.png');
+    /* Reuse tile texture if possible */
+    background-size: cover;
+
+    backface-visibility: hidden;
+    box-sizing: border-box;
+
+    /* Calculate height for 10 faces:
+     Circumference = 10 * height
+     Radius = height / (2 * tan(180/10))
+     For 50px height, translateZ is approx 77px.
+     Let's adjust the translateZ in the component or here.
+    In the component I used 25px which is definitely too small for 50px height faces. If face height is H,
+    translateZ=H / (2 * tan(18deg)) tan(18)~=0.325 translateZ=50 / (2 * 0.325)=50 / 0.65~=77px */
+}
+
+/* Adjust translateZ dynamically in JS or fix here if we assume fixed height */

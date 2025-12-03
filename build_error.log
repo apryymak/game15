@@ -1,0 +1,27 @@
+
+> wooden-15-puzzle@1.0.0 build
+> vite build
+
+vite v4.5.14 building for production...
+transforming...
+✓ 45 modules transformed.
+✓ built in 348ms
+"default" is not exported by "src/App.jsx", imported by "src/main.jsx".
+file: /Users/alexanderpryymak/game15/src/main.jsx:3:7
+1: import React from 'react'
+2: import ReactDOM from 'react-dom/client'
+3: import App from './App'
+          ^
+4: import './index.css'
+error during build:
+RollupError: "default" is not exported by "src/App.jsx", imported by "src/main.jsx".
+    at error (file:///Users/alexanderpryymak/game15/node_modules/rollup/dist/es/shared/node-entry.js:2287:30)
+    at Module.error (file:///Users/alexanderpryymak/game15/node_modules/rollup/dist/es/shared/node-entry.js:13745:16)
+    at Module.traceVariable (file:///Users/alexanderpryymak/game15/node_modules/rollup/dist/es/shared/node-entry.js:14175:29)
+    at ModuleScope.findVariable (file:///Users/alexanderpryymak/game15/node_modules/rollup/dist/es/shared/node-entry.js:12615:39)
+    at Identifier.bind (file:///Users/alexanderpryymak/game15/node_modules/rollup/dist/es/shared/node-entry.js:8319:40)
+    at CallExpression.bind (file:///Users/alexanderpryymak/game15/node_modules/rollup/dist/es/shared/node-entry.js:5888:28)
+    at CallExpression.bind (file:///Users/alexanderpryymak/game15/node_modules/rollup/dist/es/shared/node-entry.js:9890:15)
+    at Property.bind (file:///Users/alexanderpryymak/game15/node_modules/rollup/dist/es/shared/node-entry.js:5892:23)
+    at ObjectExpression.bind (file:///Users/alexanderpryymak/game15/node_modules/rollup/dist/es/shared/node-entry.js:5888:28)
+    at CallExpression.bind (file:///Users/alexanderpryymak/game15/node_modules/rollup/dist/es/shared/node-entry.js:5888:28)

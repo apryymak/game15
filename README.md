@@ -4,17 +4,19 @@ A beautiful React-based 15-puzzle game with a wooden aesthetic, inspired by clas
 
 ## Features
 
-- 🎮 Classic 15-puzzle gameplay
-- 🌳 Beautiful wooden design with realistic textures
-- ✅ Always generates solvable puzzles
-- 🔄 Reset button to shuffle tiles
-- 📱 Responsive design
+- Classic 15-puzzle gameplay
+- Beautiful wooden design with realistic textures
+- Always generates solvable puzzles
+- Reset button to shuffle tiles
+- Responsive design
+- Keyboard navigation support
+- Sound effects for tile movement and win
+- Responsive design
 
-## Getting Started
+
 
 ### Prerequisites
-
-- Node.js (version 14 or higher)
+- Node.js (version 20 or higher)
 - npm or yarn
 
 ### Installation
@@ -44,12 +46,11 @@ The built files will be in the `dist` directory.
 ## How to Play
 
 - Click on any tile adjacent to the empty space to move it
+- Use arrow keys and space to move tiles
 - Arrange the tiles so that numbers 1-15 are in order from left to right, top to bottom
 - The empty space should be in the bottom-right corner when solved
 - Click the "Reset" button to shuffle the tiles into a new solvable configuration
 
-## Game Logic
 
-The puzzle ensures solvability by checking the parity of inversions combined with the position of the empty space. If a random shuffle produces an unsolvable configuration, the algorithm automatically adjusts it to be solvable.
 
 
