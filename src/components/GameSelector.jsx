@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './GameSelector.css'
 
-const GameSelector = ({ gameVersion, setGameVersion, width }) => {
+const GameSelector = ({ gameVersion, setGameVersion }) => {
     const [clickedBtn, setClickedBtn] = useState(null)
 
     const handleClick = (version) => {
@@ -13,7 +13,7 @@ const GameSelector = ({ gameVersion, setGameVersion, width }) => {
 
     return (
 
-        <div className="game-selector" style={{ width: width }}>
+        <div className="game-selector">
             <button
                 className={`selector-btn ${gameVersion === 15 ? 'active' : ''} ${clickedBtn === 15 ? 'flip-in' : ''}`}
                 onClick={() => handleClick(15)}

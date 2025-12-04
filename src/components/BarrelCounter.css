@@ -1,15 +1,21 @@
 .barrel-counter-frame {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     gap: 1px;
     background: none;
     padding: 2px;
-    border: 1px solid #5d4037;
-    border-radius: 4px;
+    border-radius: 2px;
     box-shadow: none;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
+    top: 2px;
+
+    height: 20px;
+
+
 }
 
 .barrel-container {
@@ -38,6 +44,7 @@
     position: absolute;
     width: 20px;
     line-height: 20px;
+
     /* height set inline */
     left: 0;
     top: 0;
@@ -69,3 +76,14 @@
 }
 
 /* Adjust translateZ dynamically in JS or fix here if we assume fixed height */
+
+@media (max-width: 600px) {
+
+
+
+    .barrel-face {
+        font-size: 10px;
+        height: 13px !important;
+        line-height: 13px;
+    }
+}

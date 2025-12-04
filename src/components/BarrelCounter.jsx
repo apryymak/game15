@@ -2,9 +2,22 @@ import React, { useEffect, useState } from 'react'
 import './BarrelCounter.css'
 
 const BarrelDigit = ({ value }) => {
+    const [faceHeight, setFaceHeight] = useState(20);
+    const [radius, setRadius] = useState(31);
 
-    const FACE_HEIGHT = 20;
-    const RADIUS = 31; // Approx for 20px height (20 / (2 * tan(18deg)) ~= 30.77)
+    useEffect(() => {
+        const updateDimensions = () => {
+            const isMobile = window.matchMedia('(max-width: 600px)').matches;
+            const newHeight = isMobile ? 13 : 20;
+            const newRadius = isMobile ? 20 : 31; // Approx for 13px height (13 / (2 * tan(18deg)) ~= 20)
+            setFaceHeight(newHeight);
+            setRadius(newRadius);
+        };
+
+        updateDimensions();
+        window.addEventListener('resize', updateDimensions);
+        return () => window.removeEventListener('resize', updateDimensions);
+    }, []);
 
     return (
         <div className="barrel-container">
@@ -17,8 +30,8 @@ const BarrelDigit = ({ value }) => {
                         key={num}
                         className="barrel-face"
                         style={{
-                            height: `${FACE_HEIGHT}px`,
-                            transform: `rotateX(${num * 36}deg) translateZ(${RADIUS}px)`
+                            height: `${faceHeight}px`,
+                            transform: `rotateX(${num * 36}deg) translateZ(${radius}px)`
                         }}
                     >
                         {num}

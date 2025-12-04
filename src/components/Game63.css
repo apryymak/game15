@@ -386,6 +386,22 @@
 
 /* Responsive design */
 @media (max-width: 600px) {
+    .pecker-image {
+        display: none;
+    }
+
+    .game-63.puzzle-container .barrel-counter-frame {
+        top: 1px;
+    }
+
+    .game-63.puzzle-container .barrel-container {
+        height: 18px;
+    }
+
+    .game-63.puzzle-container .barrel-container .barrel .barrel-face {
+        height: 19px !important;
+    }
+
     .game-63.puzzle-container {
 
         gap: 20px;
@@ -420,6 +436,23 @@
 
 /* iPhone 13 Pro Max, 12 Pro Max */
 @media (max-width: 430px) {
+    .pecker-image {
+        display: none;
+    }
+
+    .game-63.puzzle-container .barrel-counter-frame {
+        top: 1px;
+    }
+
+    .game-63.puzzle-container .barrel-counter-frame,
+    .game-63.puzzle-container .barrel-container {
+        height: 15px;
+    }
+
+    .game-63.puzzle-container .barrel-container .barrel .barrel-face {
+        height: 14px !important;
+    }
+
     .game-63.puzzle-container {
 
         gap: 15px;
@@ -446,6 +479,23 @@
 
 /* iPhone 13, 12, 11 Pro Max */
 @media (max-width: 390px) {
+    .pecker-image {
+        display: none;
+    }
+
+    .game-63.puzzle-container .barrel-counter-frame {
+        top: 1px;
+    }
+
+    .game-63.puzzle-container .barrel-counter-frame,
+    .game-63.puzzle-container .barrel-container {
+        height: 14px;
+    }
+
+    .game-63.puzzle-container .barrel-container .barrel .barrel-face {
+        height: 12px !important;
+    }
+
     .game-63.puzzle-container {
 
         gap: 12px;
@@ -480,6 +530,23 @@
 
 /* iPhone 11, X, 8 Plus */
 @media (max-width: 375px) {
+    .pecker-image {
+        display: none;
+    }
+
+    .game-63.puzzle-container .barrel-counter-frame {
+        top: 1px;
+    }
+
+    .game-63.puzzle-container .barrel-counter-frame,
+    .game-63.puzzle-container .barrel-container {
+        height: 16px;
+    }
+
+    .game-63.puzzle-container .barrel-container .barrel .barrel-face {
+        height: 16px !important;
+    }
+
     .game-63.puzzle-container {
 
         gap: 10px;
@@ -510,6 +577,23 @@
 
 /* iPhone SE and smaller */
 @media (max-width: 320px) {
+    .pecker-image {
+        display: none;
+    }
+
+    .game-63.puzzle-container .barrel-counter-frame {
+        top: 1px;
+    }
+
+    .game-63.puzzle-container .barrel-counter-frame,
+    .game-63.puzzle-container .barrel-container {
+        height: 13px;
+    }
+
+    .game-63.puzzle-container .barrel-container .barrel .barrel-face {
+        height: 13px !important;
+    }
+
     .game-63.puzzle-container {
 
         gap: 8px;

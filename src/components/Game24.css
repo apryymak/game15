@@ -7,6 +7,10 @@
     overflow: hidden;
 }
 
+.game-24.puzzle-container .barrel-counter-frame {
+    top: 9px;
+}
+
 .game-wrapper .falling-snow {
     color: #fff;
     font-size: 3rem;
@@ -85,13 +89,7 @@
     z-index: 2;
 }
 
-.game-selector {
-    width: 572px;
-}
 
-.game-24.puzzle-container .barrel-counter-frame {
-    top: 8px;
-}
 
 .game-24 .puzzle-title {
     color: #5d4037;
@@ -468,6 +466,23 @@
 
 /* Responsive design */
 @media (max-width: 600px) {
+    .game-24.puzzle-container .barrel-counter-frame {
+        top: 1px;
+    }
+
+    .game-24.puzzle-container .barrel-container {
+        height: 18px;
+    }
+
+    .game-24.puzzle-container .barrel-container .barrel .barrel-face {
+        height: 19px !important;
+    }
+
+
+    .pecker-image {
+        display: none;
+    }
+
     .game-24.puzzle-container {
 
         gap: 20px;
@@ -502,14 +517,29 @@
 
 /* iPhone 13 Pro Max, 12 Pro Max */
 @media (max-width: 430px) {
-    .game-24.puzzle-container {
+    .game-24.puzzle-container .barrel-counter-frame {
+        top: 1px;
+    }
 
+    .game-24.puzzle-container .barrel-counter-frame,
+    .game-24.puzzle-container .barrel-container {
+        height: 15px;
+    }
+
+    .game-24.puzzle-container .barrel-container .barrel .barrel-face {
+        height: 14px !important;
+    }
+
+    .pecker-image {
+        display: none;
+    }
+
+    .game-24.puzzle-container {
         gap: 15px;
     }
 
     .game-24 .puzzle-board {
         padding: 24px;
-
     }
 
     .game-24 .puzzle-cell {
@@ -528,14 +558,29 @@
 
 /* iPhone 13, 12, 11 Pro Max */
 @media (max-width: 390px) {
-    .game-24.puzzle-container {
+    .game-24.puzzle-container .barrel-counter-frame {
+        top: 1px;
+    }
 
+    .game-24.puzzle-container .barrel-counter-frame,
+    .game-24.puzzle-container .barrel-container {
+        height: 14px;
+    }
+
+    .game-24.puzzle-container .barrel-container .barrel .barrel-face {
+        height: 12px !important;
+    }
+
+    .pecker-image {
+        display: none;
+    }
+
+    .game-24.puzzle-container {
         gap: 12px;
     }
 
     .game-24 .puzzle-board {
         padding: 22px;
-
     }
 
     .game-24 .puzzle-cell {
@@ -562,14 +607,26 @@
 
 /* iPhone 11, X, 8 Plus */
 @media (max-width: 375px) {
-    .game-24.puzzle-container {
+    .game-24.puzzle-container .barrel-counter-frame {
+        top: 1px;
 
+    }
+
+    .game-24.puzzle-container .barrel-counter-frame,
+    .game-24.puzzle-container .barrel-container {
+        height: 13px;
+    }
+
+    .pecker-image {
+        display: none;
+    }
+
+    .game-24.puzzle-container {
         gap: 10px;
     }
 
     .game-24 .puzzle-board {
         padding: 21px;
-
     }
 
     .game-24 .puzzle-cell {
@@ -592,14 +649,26 @@
 
 /* iPhone SE and smaller */
 @media (max-width: 320px) {
-    .game-24.puzzle-container {
+    .game-24.puzzle-container .barrel-counter-frame {
+        top: 1px;
 
+    }
+
+    .game-24.puzzle-container .barrel-counter-frame,
+    .game-24.puzzle-container .barrel-container {
+        height: 11px;
+    }
+
+    .pecker-image {
+        display: none;
+    }
+
+    .game-24.puzzle-container {
         gap: 8px;
     }
 
     .game-24 .puzzle-board {
         padding: 19px;
-
     }
 
     .game-24 .puzzle-cell {

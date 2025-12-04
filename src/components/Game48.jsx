@@ -3,7 +3,7 @@ import './Game48.css'
 import Tile15 from './Tile15'
 import BarrelCounter from './BarrelCounter'
 import GameSelector from './GameSelector'
-import Season from './Season'
+import Theme from './Theme'
 import peckerImg from '../assets/images/pecker.png'
 import congratsImg from '../assets/images/congrats.png'
 import woodKnockSound from '../assets/sounds/wood-knock.mp3'
@@ -14,7 +14,7 @@ const GRID_SIZE = 7
 const TOTAL_TILES = 48
 const EMPTY_VALUE = 49 // Use 49 to represent empty space
 
-const Game48 = ({ gameVersion, setGameVersion }) => {
+const Game48 = ({ gameVersion, setGameVersion, theme }) => {
     const [board, setBoard] = useState([])
     const [isSolved, setIsSolved] = useState(false)
     const [hasInteracted, setHasInteracted] = useState(false)
@@ -248,7 +248,7 @@ const Game48 = ({ gameVersion, setGameVersion }) => {
 
     return (
         <div className="game-wrapper">
-            {/* Flying butterflies removed */}
+            <Theme theme={theme} />
 
             <div className="puzzle-container game-48">
                 <GameSelector gameVersion={gameVersion} setGameVersion={setGameVersion} width={553} />

@@ -3,7 +3,7 @@ import './Game35.css'
 import Tile15 from './Tile15'
 import BarrelCounter from './BarrelCounter'
 import GameSelector from './GameSelector'
-import Season from './Season'
+import Theme from './Theme'
 import peckerImg from '../assets/images/pecker.png'
 import congratsImg from '../assets/images/congrats.png'
 import woodKnockSound from '../assets/sounds/wood-knock.mp3'
@@ -14,7 +14,7 @@ const GRID_SIZE = 6
 const TOTAL_TILES = 35
 const EMPTY_VALUE = 36 // Use 36 to represent empty space
 
-const Game35 = ({ gameVersion, setGameVersion }) => {
+const Game35 = ({ gameVersion, setGameVersion, theme }) => {
     const [board, setBoard] = useState([])
     const [isSolved, setIsSolved] = useState(false)
     const [hasInteracted, setHasInteracted] = useState(false)
@@ -252,55 +252,58 @@ const Game35 = ({ gameVersion, setGameVersion }) => {
     }
 
     return (
-        <div className="puzzle-container game-35">
-            <GameSelector gameVersion={gameVersion} setGameVersion={setGameVersion} width={530} />
+        <div className="game-wrapper">
+            <Theme theme={theme} />
+            <div className="puzzle-container game-35">
+                <GameSelector gameVersion={gameVersion} setGameVersion={setGameVersion} width={530} />
 
-            {/* Hidden audio elements for sounds */}
-            <audio
-                ref={knockSoundRef}
-                src={woodKnockSound}
-                preload="auto"
-            />
-            <audio
-                ref={winSoundRef}
-                src={winSound}
-                preload="auto"
-            />
-            <audio
-                ref={shuffleSoundRef}
-                src={shuffleSound}
-                preload="auto"
-            />
+                {/* Hidden audio elements for sounds */}
+                <audio
+                    ref={knockSoundRef}
+                    src={woodKnockSound}
+                    preload="auto"
+                />
+                <audio
+                    ref={winSoundRef}
+                    src={winSound}
+                    preload="auto"
+                />
+                <audio
+                    ref={shuffleSoundRef}
+                    src={shuffleSound}
+                    preload="auto"
+                />
 
 
-            <div className="board-wrapper">
-                <div className={`puzzle-board ${isShaking ? 'shaking' : ''}`}>
-                    <BarrelCounter value={moves} />
-                    {board.map((tile, index) => (
-                        <Tile15
-                            key={index}
-                            id={`tile-${index}`}
-                            value={tile}
-                            onClick={() => handleTileClick(index)}
-                            onKeyDown={(e) => handleKeyDown(e, index)}
-                            isSolved={isSolved}
-                            isEmpty={tile === EMPTY_VALUE}
-                        />
-                    ))}
+                <div className="board-wrapper">
+                    <div className={`puzzle-board ${isShaking ? 'shaking' : ''}`}>
+                        <BarrelCounter value={moves} />
+                        {board.map((tile, index) => (
+                            <Tile15
+                                key={index}
+                                id={`tile-${index}`}
+                                value={tile}
+                                onClick={() => handleTileClick(index)}
+                                onKeyDown={(e) => handleKeyDown(e, index)}
+                                isSolved={isSolved}
+                                isEmpty={tile === EMPTY_VALUE}
+                            />
+                        ))}
+                    </div>
+                    <img src={peckerImg} alt="Woodpecker" className={`pecker-image ${isShaking ? 'shaking' : ''}`} />
                 </div>
-                <img src={peckerImg} alt="Woodpecker" className={`pecker-image ${isShaking ? 'shaking' : ''}`} />
+                {isSolved && hasInteracted && (
+                    <div className="congrats-overlay">
+                        <img src={congratsImg} alt="Congratulations!" className="congrats-image" />
+                    </div>
+                )}
+                <button
+                    className="reset-button"
+                    onClick={shuffleTiles}
+                >
+                    <span className="reset-button-text">SHUFFLE</span>
+                </button>
             </div>
-            {isSolved && hasInteracted && (
-                <div className="congrats-overlay">
-                    <img src={congratsImg} alt="Congratulations!" className="congrats-image" />
-                </div>
-            )}
-            <button
-                className="reset-button"
-                onClick={shuffleTiles}
-            >
-                <span className="reset-button-text">SHUFFLE</span>
-            </button>
         </div>
     )
 }

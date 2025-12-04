@@ -8,13 +8,13 @@ import winSound from '../assets/sounds/win-sound.mp3'
 import shuffleSound from '../assets/sounds/board-shuffle.mp3'
 import BarrelCounter from './BarrelCounter'
 import GameSelector from './GameSelector'
-import Season from './Season'
+import Theme from './Theme'
 
 const GRID_SIZE = 4
 const TOTAL_TILES = 15
 const EMPTY_VALUE = 16 // Use 16 to represent empty space
 
-const Game15 = ({ gameVersion, setGameVersion }) => {
+const Game15 = ({ gameVersion, setGameVersion, theme }) => {
   const [board, setBoard] = useState([])
   const [isSolved, setIsSolved] = useState(false)
   const [hasInteracted, setHasInteracted] = useState(false)
@@ -250,14 +250,10 @@ const Game15 = ({ gameVersion, setGameVersion }) => {
 
   return (
     <div className="game-wrapper">
-      {/* Falling leaves - limited to 4 on screen */}
-      <div className="falling-leaf" style={{ left: '2%', animationDelay: '0s', animationDuration: '25s, 6s, 5s', animationName: 'fall, rotate, sway', fontSize: '2.5rem' }}>🍁</div>
-      <div className="falling-leaf" style={{ left: '98%', animationDelay: '5s', animationDuration: '28s, 5s, 7s', animationName: 'fall, rotate-reverse, sway-reverse', fontSize: '3.2rem' }}>🍁</div>
-      <div className="falling-leaf" style={{ left: '8%', animationDelay: '10s', animationDuration: '22s, 7s, 6s', animationName: 'fall, rotate-reverse, sway', fontSize: '2.2rem' }}>🍁</div>
-      <div className="falling-leaf" style={{ left: '92%', animationDelay: '15s', animationDuration: '26s, 4s, 8s', animationName: 'fall, rotate, sway-reverse', fontSize: '3.8rem' }}>🍁</div>
+      <Theme theme={theme} />
 
       <div className="puzzle-container game-15">
-        <GameSelector gameVersion={gameVersion} setGameVersion={setGameVersion} width={422} />
+
         {/* Hidden audio elements for sounds */}
         <audio
           ref={knockSoundRef}
@@ -278,6 +274,7 @@ const Game15 = ({ gameVersion, setGameVersion }) => {
 
 
         <div className="board-wrapper">
+          <GameSelector gameVersion={gameVersion} setGameVersion={setGameVersion} />
           <div className={`puzzle-board ${isShaking ? 'shaking' : ''}`}>
             <BarrelCounter value={moves} />
             {board.map((tile, index) => (
