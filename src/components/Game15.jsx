@@ -9,6 +9,7 @@ import shuffleSound from '../assets/sounds/board-shuffle.mp3'
 import BarrelCounter from './BarrelCounter'
 import GameSelector from './GameSelector'
 import Theme from './Theme'
+import Footer from './Footer'
 
 const GRID_SIZE = 4
 const TOTAL_TILES = 15
@@ -302,7 +303,9 @@ const Game15 = ({ gameVersion, setGameVersion, theme }) => {
         >
           <span className="reset-button-text">SHUFFLE</span>
         </button>
+        <Footer />
       </div>
+
     </div>
   )
 }

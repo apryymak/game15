@@ -22,8 +22,7 @@
   right: 20px;
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.4);
-  border: rgba(255, 255, 255, 0.4);
-  border-style: solid 1px;
+  border: rgba(255, 255, 255, 0.4) solid 1px;
   border-radius: 10px;
   color: rgb(55, 53, 53);
   font-weight: bold;
